@@ -95,6 +95,10 @@ def dashboard():
             print(f"Failed to send email to {msg['To']}. Error: {str(e)}")
             return redirect(url_for('dashboard'))
             
-
+@app.route('/calender', methods=['GET', 'POST'])
+def dashboard():
+    if request.method == 'GET':
+        return render_template("calender.html") 
+    
 if __name__ == '__main__':
     app.run(debug=True)
