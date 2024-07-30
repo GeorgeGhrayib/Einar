@@ -50,7 +50,9 @@ def dashboard():
     if 'user' not in login_session or login_session['user'] == None:
         return redirect(url_for('home'))
     if request.method == 'GET':
-        return render_template("dashboard.html",emails = db.child("emails").get().val()) 
+        videos = db.child("videos").get().val()
+        print(videos['-O326nChz2lmrKlddzV7']['name'])
+        return render_template("dashboard.html",emails = db.child("emails").get().val(),  videos = db.child("videos").get().val()) 
     elif request.form['action'] == "mailsender":
         subject = request.form['subject']
         body = request.form['message']
@@ -62,12 +64,20 @@ def dashboard():
         auth.current_user = None
         login_session['user'] = None
         return redirect(url_for('admin'))
+    elif request.form['action'] == 'plan':
+        video={ 
+        'name' : request.form['name'],
+        'date' : request.form['date'],
+        'url' : request.form['url'],
+        'time' : request.form['time']    
+        }
+        db.child('videos').push(video)
+        return redirect(url_for('dashboard'))
     else:
         emails = db.child("emails").get().val()
         emails.append(request.form['email'])
         db.child("emails").set(emails)
         return redirect(url_for('dashboard'))
-    
 def send_email(recipient_email,subject,body,file):
     # Create the email message
     msg = MIMEMultipart()
