@@ -5,203 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Einar Youth Center - About Us</title>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-    <style>
-        /* General body styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            background-color: #f9f9f9;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Header styling */
-        header {
-            background-color: #00274d;
-            color: white;
-            padding: 20px 10%;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-weight: bold;
-        }
-        header nav {
-            margin-top: 15px;
-        }
-        header a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1.2em;
-        }
-        header a:hover {
-            text-decoration: underline;
-        }
-        header .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-        header .dropbtn {
-            background-color: #0056a1;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 1.2em;
-        }
-        header .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            padding: 10px;
-            top: 100%;
-            left: 0;
-        }
-        header .dropdown-content a {
-            display: block;
-            padding: 10px;
-        }
-        header .dropdown-content img {
-            vertical-align: middle;
-            margin: 0 5px;
-        }
-        header .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Main content styling */
-        main {
-            flex: 1;
-            padding: 40px 10%;
-            text-align: center;
-        }
-        main img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        h2 {
-            color: #00274d;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style-type: disc;
-            margin: 20px auto;
-            padding: 0;
-            text-align: left;
-            max-width: 600px;
-        }
-        ul li {
-            margin: 10px 0;
-            font-size: 1.1em;
-        }
-
-        /* Footer styling */
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            background-color: #00274d;
-            color: white;
-            position: relative;
-            height: 30vh;
-        }
-        .footer-logo {
-            max-width: 40%;
-            height: auto;
-        }
-        .footer-text {
-            max-width: 50%;
-            text-align: left;
-        }
-
-        /* Contact section styling */
-        #contact {
-            padding: 20px 10%;
-            background-color: #f9f9f9;
-            text-align: center;
-        }
-        #contact h1 {
-            color: #00274d;
-            margin-bottom: 20px;
-        }
-        #contact form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        #contact div {
-            margin: 10px 0;
-            width: 100%;
-            text-align: left;
-        }
-        #contact label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        #contact input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        #contact button {
-            background-color: #0056a1;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        #contact button:hover {
-            background-color: #003d7a;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #00274d;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
 </head>
 <body>
     <header>
-        <h1>Einar Youth Center</h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="https://www.coing.co/einar/JLM_East_YC/subcommunities">Apply</a>
-            <div class="dropdown">
-                <button class="dropbtn">Media</button>
-                <div class="dropdown-content">
+        <h1>
+            Einar Youth Center
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <a href="/">Home</a>&nbsp;
+            <a href="https://www.coing.co/einar/JLM_East_YC/subcommunities">Apply</a>&nbsp;
+            <a>
+                <div class="dropdown">
+                    <button class="dropbtn"><h2>Media</h2></button>
+                    <div class="dropdown-content">
                     <a href="https://www.instagram.com/einarjyc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
-                        <img src="{{ url_for('static', filename='instagram.png') }}" alt="Instagram logo" width="50" height="50">
+                        <img src="{{ url_for('static', filename='instagram.png') }}" alt="instagram logo" width="50%" height="50%">
                     </a>
                     <a href="https://www.tiktok.com/@einar.youth.center?is_from_webapp=1&sender_device=pc">
-                        <img src="{{ url_for('static', filename='tiktok.png') }}" alt="TikTok logo" width="40" height="40">
+                        <img src="{{ url_for('static', filename='tiktok.png') }}" alt="tiktok logo" width="40%" height="40%">
                     </a>
                     <a href="https://www.facebook.com/Einar.JYC/">
-                        <img src="{{ url_for('static', filename='facebook.png') }}" alt="Facebook logo" width="30" height="30">
+                        <img src="{{ url_for('static', filename='facebook.png') }}" alt="facebook logo" width="30%" height="30%">
                     </a>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </a>
+        </h1>
     </header>
-
     <main>
         <section>
             <h2>About Einar Youth Center</h2>
@@ -218,10 +51,6 @@
     </main>
 
     <div class="footer-content">
-        <div class="footer-text">
-            <h2>Our Logo</h2>
-            <p>Our logo represents our commitment to empowering youth and creating a supportive community. Feel free to explore more about our mission and get in touch with us.</p>
-        </div>
         <img src="../static/logo.jpeg" alt="Einar's logo" class="footer-logo">
     </div>
 
@@ -244,6 +73,7 @@
             </div>
             <button type="submit">Send Message</button>
         </form>
+        <h1>&nbsp;</h1><h1>&nbsp;</h1><h1>&nbsp;</h1>
     </div>
 
     <footer>
@@ -251,7 +81,3 @@
     </footer>
 </body>
 </html>
-
-
-
-
