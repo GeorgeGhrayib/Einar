@@ -47,6 +47,8 @@ def admin():
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
+    if 'user' not in login_session or login_session['user'] == None:
+        return redirect(url_for('home'))
     if request.method == 'GET':
         return render_template("dashboard.html",emails = db.child("emails").get().val()) 
     elif request.form['action'] == "mailsender":
@@ -58,7 +60,8 @@ def dashboard():
         return redirect(url_for('dashboard'))
     elif request.form['action'] == 'signout':
         auth.current_user = None
-        return redirect(url_for('index'))
+        login_session['user'] = None
+        return redirect(url_for('admin'))
     else:
         emails = db.child("emails").get().val()
         emails.append(request.form['email'])
@@ -98,6 +101,11 @@ def send_email(recipient_email,subject,body,file):
 def home():
     if request.method == 'GET':
         return render_template("home.html") 
+    else:
+        emails = db.child("emails").get().val()
+        emails.append(request.form['email'])
+        db.child("emails").set(emails)
+        return redirect(url_for('home'))
     
 if __name__ == '__main__':
     app.run(debug=True)

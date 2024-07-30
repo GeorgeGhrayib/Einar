@@ -3,54 +3,61 @@
   <head>
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <title>Dashboard</title>
-    <h1 style="text-align: center;">
+  </head>
+  <body> 
+    <header>
+      <h1 style="text-align: center;">
         <form action="/dashboard" method="POST">
           Einar's Admin Dashboard:  
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
           <button type="submit" name = "action" value="signout">Sign-out!</button> 
         </form>
     </h1>
-  </head>
-  <body> 
-    <div style="width:1000px;">
-      <div style="width:500px; float:left;">
-        <form action="/dashboard" method="POST">
-          <label for="subject">Subject:</label>
+    </header>
+    <main>
+      <div style="width:1000px;">
+        <div style="width:500px; float:left;">
+          <form action="/dashboard" method="POST">
+            <label for="subject">Subject:</label>
+            <br>
+            <input type="text" id="subject" name="subject" required>
+            <br>
+            <br>
+            <label for="message">Message:</label>
+            <br>
+            <textarea id="message" name="message"></textarea>
+            <br>
+            <label for="file">Select a file:</label>
+            <br>
+            <input type="file" id="file" name="file">
+            <br>
+            <br>
+            <br>
+            <button type="submit" value = "mailsender" name = "action">Send</button>
+          </form>
+        </div>
+        <div style="width:500px; float:right;">
+          <ol id="container">
+            {% for email in emails %}
+              <li>
+                {{email}}
+              </li>
+            {% endfor %}
+          </ol>
           <br>
-          <input type="text" id="subject" name="subject" required>
-          <br>
-          <br>
-          <label for="message">Message:</label>
-          <br>
-          <textarea id="message" name="message"></textarea>
-          <br>
-          <label for="file">Select a file:</label>
-          <br>
-          <input type="file" id="file" name="file">
-          <br>
-          <br>
-          <br>
-          <button type="submit" value = "mailsender" name = "action">Send</button>
-        </form>
+          <form action="/dashboard" method="POST">
+            <label for="subject">Email:</label>
+            <br>
+            <input type="text" id="email" name="email" required>
+            <br>
+            <br>
+            <button type="submit" value = "data" name = "action">Add Email!</button>
+          </form>
+        </div>
+        <div>
+  
+        </div>
       </div>
-      <div style="width:500px; float:right;">
-        <ol id="container">
-          {% for email in emails %}
-            <li>
-              {{email}}
-            </li>
-          {% endfor %}
-        </ol>
-        <br>
-        <form action="/dashboard" method="POST">
-          <label for="subject">Email:</label>
-          <br>
-          <input type="text" id="email" name="email" required>
-          <br>
-          <br>
-          <button type="submit" value = "data" name = "action">Add Email!</button>
-        </form>
-      </div>
-    </div>
+    </main>
   </body>
 </html>
