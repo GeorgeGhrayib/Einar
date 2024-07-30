@@ -95,3 +95,31 @@ ul#container {
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #f7ca41;}
+
+.container {
+  width: 100%;
+  height: 50vh;
+}
+
+.leftpane {
+  width: 25%;
+  height: 50vh;
+}
+
+.middlepane {
+  width: 50%;
+  height: 50vh;
+}
+
+.rightpane {
+  width: 25%;
+  height: 50vh;
+}
+
+body {
+  margin: 0!important;
+}
+
+.d-flex {
+  display: flex;
+}
