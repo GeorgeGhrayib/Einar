@@ -67,7 +67,7 @@ def dashboard():
         emails.append(request.form['email'])
         db.child("emails").set(emails)
         return redirect(url_for('dashboard'))
-    
+    # Elian
 def send_email(recipient_email,subject,body,file):
     # Create the email message
     msg = MIMEMultipart()
