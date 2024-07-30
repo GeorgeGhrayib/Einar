@@ -107,5 +107,10 @@ def home():
         db.child("emails").set(emails)
         return redirect(url_for('home'))
     
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+    if request.method == 'GET':
+        return render_template("about.html") 
+    
 if __name__ == '__main__':
     app.run(debug=True)
