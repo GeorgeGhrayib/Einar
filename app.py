@@ -51,7 +51,6 @@ def dashboard():
         return redirect(url_for('home'))
     if request.method == 'GET':
         videos = db.child("videos").get().val()
-        print(videos['-O326nChz2lmrKlddzV7']['name'])
         return render_template("dashboard.html",emails = db.child("emails").get().val(),  videos = db.child("videos").get().val()) 
     elif request.form['action'] == "mailsender":
         subject = request.form['subject']
