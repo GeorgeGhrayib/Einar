@@ -58,7 +58,7 @@ ul#container {
 .dropbtn {
   background-color: #f7ca41;
   color: white;
-  padding: 16px;
+  padding: 5px 15px;
   font-size: 16px;
   border: none;
 }
@@ -240,12 +240,14 @@ ul {
   list-style-type: disc;
   margin: 20px auto;
   padding: 0;
-  text-align: left;
+  text-align: right;
   max-width: 600px;
+  direction: rtl;
 }
 ul li {
   margin: 10px 0;
   font-size: 1.1em;
+  direction: rtr; unicode-bidi: embed;
 }
 
 
